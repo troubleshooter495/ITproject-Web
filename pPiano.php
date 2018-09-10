@@ -75,16 +75,21 @@ if ($type=="notaclassic"){
 	$('.whitebtn').click(function(){
 	 	but = $(this).attr('id');
 	 	if(but + num + '.mp3'==ways[r]){
+	 		$('.message').text(' ');
 	 		$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	}
-	 	else { $('.message').text('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');}
+	 	else {
+	 		$('.message').text(' '); 
+	 		$('.message').text('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');}
 	 	flag = 1;
 	});
 	$('.blackbtn').click(function(){
 	 	but = $(this).attr('id');
 	 	if(but + num + '.mp3'==ways[r]){
+	 		$('.message').text(' ');
 	 		$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	} else {
+	 		$('.message').text(' ');
 	 		$('.message').text('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');
 	 	}
 	 	flag = 1;
@@ -122,6 +127,7 @@ $('.whitebtn').click(function(){
 	 	but = $(this).attr('id');
 	 	if(isworking){
 		 	if(but + num + '.mp3'==ways[r]){
+		 		$('.message').text('');
 			 	$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
 			 	tr = 1;
 				id++;
@@ -151,6 +157,7 @@ $('.blackbtn').click(function(){
 	 	but = $(this).attr('id');
 	 	if(isworking){
 		 	if(but + num + '.mp3'==ways[r]){
+		 		$('.message').text('');
 			 	$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
 			 	tr = 1;
 				id++;

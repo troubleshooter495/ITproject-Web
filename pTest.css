@@ -93,5 +93,20 @@
 	height: 200px;
 	margin: auto;
 	margin-top: 50px;
-	background: green;
+	background: white;
+	position: relative;
+}
+
+.ans {
+	width: 198px;
+	height: 16px;
+	border: 1px solid black;
+}
+.replayButton {
+	position: absolute;
+	top: 30px;
+	right: 37px;
+	width: 125px;
+	height: 125px;
+	background: pink;
 }

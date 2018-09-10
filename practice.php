@@ -192,7 +192,7 @@ $('#notaclassic').click(function(){
 });
 
 $('#intclassic').click(function(){
-	window.location = 'pPiano.php?type=intclassic'
+	window.location = 'pTest.php?type=intclassic'
 });
 
 $('#chordclassic').click(function(){
