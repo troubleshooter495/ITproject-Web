@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" >
@@ -197,5 +197,4 @@ if($type='int'){
 		location.href = 'practice.php';
 	});
 </script>
-</body>
-</html>
+</body></html>
