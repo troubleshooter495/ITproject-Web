@@ -1,0 +1,25 @@
+// JavaScript Document
+$('#button1').mouseover(function(){
+			$('#line1').css('width','100%');
+		});
+		$('#button1').mouseout(function(){
+			$('#line1').css('width','0%');
+		});
+		$('#button2').mouseover(function(){
+			$('#line2').css('width','100%');
+		});
+		$('#button2').mouseout(function(){
+			$('#line2').css('width','0%');
+		});
+		$('#button3').mouseover(function(){
+			$('#line3').css('width','100%');
+		});
+		$('#button3').mouseout(function(){
+			$('#line3').css('width','0%');
+		});
+		$('#button4').mouseover(function(){
+			$('#line4').css('width','100%');
+		});
+		$('#button4').mouseout(function(){
+			$('#line4').css('width','0%');
+		});	

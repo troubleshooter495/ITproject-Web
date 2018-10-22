@@ -115,7 +115,7 @@ if($type='int'){
 						a2.src = 'mus/' + ways[r_note + r_int];
 						a1.play();
 						a2.play();
-						alert(ways[r_note] + ' ' + ways[r_note + r_int] + ' ' + ints[r_int]);
+						//alert(ways[r_note] + ' ' + ways[r_note + r_int] + ' ' + ints[r_int]);
 				} else {
 					a1 = new Audio()
 					a2 = new Audio()
@@ -123,7 +123,7 @@ if($type='int'){
 					a2.src = 'mus/' + ways[r_note];
 					a1.play();
 					a2.play();
-					alert(ways[r_note] + ' ' + ways[r_note - r_int] + ' ' + ints[r_int]);
+					//alert(ways[r_note] + ' ' + ways[r_note - r_int] + ' ' + ints[r_int]);
 			}
 			flag=0;
 			}

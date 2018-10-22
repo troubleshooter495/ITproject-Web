@@ -115,8 +115,8 @@
 							</select>
 						</div>
 						<div class="asd">
-							<input type="radio" name="ch" checked="checked"> Вводить <br>
-							<input type="radio" name="ch"> Выбирать
+							<input type="radio" name="ch" > Вводить <br>
+							<input type="radio" name="ch" checked="checked"> Выбирать
 						</div>
 					</div>
 					<div class="startButton" id="int"> <span>Начать</span> </div>

@@ -1,79 +1,29 @@
 ﻿
-@charset "utf-8";
-/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
 @font-face{
     font-family: "raleway"; /* Гарнитура шрифта */
     src: url("font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
-*{
-	margin: 0;
-	padding: 0;
-}
-
-.shitBlockDeleteHim {
-	position: absolute;
-	z-index: 999;
-	top: 300px;
-	left: 130px;
-	border: 1px solid blue;
-}
-
-.articlesBlock {
-	width: 700px;
-	height: 1200px;
-	background: gray;
+.midBlock {
+	width: 1100px;
+	height: 1100px;
 	margin: auto;
-	position: relative;
-}
-
-.article {
-	width: 650px;
-	height: 1130px;
-	position: absolute;
-	padding: 25px;
-	align: center;
-}
-
-#article1 {
-	background: pink;
-	
-	
-}
-
-#article2 {
-	background: grey;
-	visibility: hidden;
-}
-
-#article3 {
-	background: brown;
-	visibility: hidden;
-}
-
-.fuckedUpBlock {
-	width: 1200px;
-	height: auto;
-	margin: auto;
-	position: relative;
-}
-
-.fuckingList {
-	width: 240px; /* длина больш блока - 700px, среднего - 380px, длина блока со списками = (700-380)/2 = 160px */
-	height: 300px;
-	margin-right: 10px;
-	border-radius: 5px;
-	background: red;
-	position: absolute;
-	top: 100px;
-	left: 0;
-	/*transition-duration: 0.5s;*/
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .header {
-	width: 700px;
+	width: 1100px;
 	height: 70px;
-	background: yellow;
+	background: #ddccc1;
 }
 .headerButton {
 	float: left;
@@ -102,17 +52,90 @@
 	cursor: pointer;
 }
 
+.headerButton > a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
 .logo {
 	float: right;
 	width: 50px;
 	height: 50px;
 	margin-right: 60px;
-	margin-top: 2px;
+	margin-top: 5px;
 	font-family: "raleway";
 	background-image: url(img/logo.png);
 	background-size: cover;
 	background-position: center;
 }
+
+.block {
+	width:100%;
+	height: 100%;
+	background: white;
+}
+
+
+.shitBlockDeleteHim {
+	position: absolute;
+	z-index: 999;
+	top: 300px;
+	left: 130px;
+	border: 1px solid blue;
+}
+
+.articlesBlock {
+	width: 1100px;
+	height: 1200px;
+	background: gray;
+	margin: auto;
+	position: relative;
+}
+
+.article {
+	width: 1100px;
+	height: 1130px;
+	position: absolute;
+	padding: 25px;
+	align: center;
+}
+
+#article1 {
+	background: pink;
+	
+	
+}
+
+#article2 {
+	background: grey;
+	visibility: hidden;
+}
+
+#article3 {
+	background: brown;
+	visibility: hidden;
+}
+
+.fuckedUpBlock {
+	width: 1500px;
+	height: auto;
+	margin: auto;
+	position: relative;
+}
+
+.fuckingList {
+	width: 240px; /* длина больш блока - 700px, среднего - 380px, длина блока со списками = (700-380)/2 = 160px */
+	height: 300px;
+	margin-right: 10px;
+	border-radius: 5px;
+	background: red;
+	position: absolute;
+	top: 100px;
+	left: 0;
+	/*transition-duration: 0.5s;*/
+}
+
+
 
 .listHeader {
 	width: 100%;

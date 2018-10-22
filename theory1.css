@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+@font-face{
+    font-family: "raleway"; /* Гарнитура шрифта */
+    src: url("font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+
+.header {
+	width: 1100px;
+	height: 70px;
+	background: #ddccc1;
+}
+.headerButton {
+	float: left;
+	font-family: "raleway";
+	position: relative;
+}
+.borderButton {
+	position: absolute;
+	width: 100%;
+	height: 2px;
+}
+
+.borderLine {
+	height: 100%;
+	width: 0%;
+	background: #946F55;
+	margin: auto;
+	transition-duration: 0.2s;
+}
+
+.button {
+	display: inline-block;
+	margin-left: 40px;
+	margin-top: 15px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.headerButton > a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.logo {
+	float: right;
+	width: 50px;
+	height: 50px;
+	margin-right: 60px;
+	margin-top: 5px;
+	font-family: "raleway";
+	background-image: url(img/logo.png);
+	background-size: cover;
+	background-position: center;
+}
+
+
+.midBlock {
+	width: 1100px;
+	margin:auto;
+	background: #ddccc1;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.article {
+	padding: 100px;
+}
+
+.sideNav {
+	position: absolute;
+	width: 300px;
+	left: 0px;
+	height: 0px;
+	background: #E7CAC5;
+	overflow-x: hidden;
+    transition: 0.5s;
+	z-index: 1;
+}
+
+.open {
+	float:right;
+	margin-right: 40px;
+	margin-top: 18px;
+	cursor:pointer;
+	font-family: "raleway";
+}
+
+.sideNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sideNav a:hover {
+    color: #f1f1f1;
+}
+.sideNav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navFill {
+	padding: 30px;
+}

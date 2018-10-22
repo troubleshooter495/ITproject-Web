@@ -18,44 +18,44 @@
 
 <div class="placeHolder">
 	<div class="blacks">
-		<div class="black" id="n2"></div>
-		<div class="black" id="n4"></div>
-		<div class="black" id="n7"></div>
-		<div class="black" id="n9"></div>
-		<div class="black" id="n11"></div>
-		<div class="black" id="n14"></div>
-		<div class="black" id="n16"></div>
-		<div class="black" id="n19"></div>
-		<div class="black" id="n21"></div>
-		<div class="black" id="n23"></div>
-		<div class="black" id="n26"></div>
-		<div class="black" id="n28"></div>
-		<div class="black" id="n31"></div>
-		<div class="black" id="n33"></div>
-		<div class="black" id="n35"></div>
+		<div class="black" id="dod0"></div>
+		<div class="black" id="red0"></div>
+		<div class="black" id="fad0"></div>
+		<div class="black" id="sod0"></div>
+		<div class="black" id="lad0"></div>
+		<div class="black" id="dod1"></div>
+		<div class="black" id="red1"></div>
+		<div class="black" id="fad1"></div>
+		<div class="black" id="sod1"></div>
+		<div class="black" id="lad1"></div>
+		<div class="black" id="dod2"></div>
+		<div class="black" id="red2"></div>
+		<div class="black" id="fad2"></div>
+		<div class="black" id="sod2"></div>
+		<div class="black" id="lad2"></div>
 	</div>	
 	<div class="whites">
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
-		<div class="white" id=""></div>
+		<div class="white" id="do0"></div>
+		<div class="white" id="re0"></div>
+		<div class="white" id="mi0"></div>
+		<div class="white" id="fa0"></div>
+		<div class="white" id="so0"></div>
+		<div class="white" id="la0"></div>
+		<div class="white" id="si0"></div>
+		<div class="white" id="do1"></div>
+		<div class="white" id="re1"></div>
+		<div class="white" id="mi1"></div>
+		<div class="white" id="fa1"></div>
+		<div class="white" id="so1"></div>
+		<div class="white" id="la1"></div>
+		<div class="white" id="si1"></div>
+		<div class="white" id="do2"></div>
+		<div class="white" id="re2"></div>
+		<div class="white" id="mi2"></div>
+		<div class="white" id="fa2"></div>
+		<div class="white" id="so2"></div>
+		<div class="white" id="la2"></div>
+		<div class="white" id="si2"></div>
 	</div>	
 </div>
 
