@@ -101,7 +101,6 @@
 	position: relative;
 	width:400px;
 	height: 180px;
-	background: red;
 	margin-left: 10px;
 }
 
@@ -112,7 +111,10 @@
 	border-right: 1px solid black;
 	background: white;
 	z-index: 1;
+	transition-duration: 0.2s;
+	border-radius: 0 0 4px 4px;
 }
+
 
 .blackbtn {
 	position: absolute;
@@ -120,6 +122,8 @@
 	height: 110px;
 	background: black;
 	z-index: 2;
+	border-radius: 0 0 4px 4px;
+	transition-duration: 0.2s;
 }
 
 #dod{ left:40px; } 

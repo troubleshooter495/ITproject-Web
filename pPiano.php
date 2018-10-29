@@ -29,7 +29,7 @@
 			<div class="whitebtn" id="fa"> </div>
 			<div class="whitebtn" id="sol"> </div>
 			<div class="whitebtn" id="la"> </div>
-			<div class="whitebtn" id="si"> </div>
+			<div class="whitebtn" style="border-right: none" id="si"> </div>
 			<div class="blackbtn" id="dod"></div>
 			<div class="blackbtn" id="red"></div>
 			<div class="blackbtn" id="fad"></div>
@@ -43,7 +43,22 @@
 
 
 <script>
-
+$('.whitebtn').on('click touchstart', function(e){
+	$('#'+e.target.id).css('box-shadow','inset 0 0 10px rgba(0,0,0,0.9)');
+	setTimeout(function(){
+		$('#'+e.target.id).css('box-shadow','none');
+	},200);
+});
+$('.blackbtn').on('click touchstart', function(e){
+	$('#'+e.target.id).css('box-shadow','inset 0 0 3px rgba(255,255,255,0.9)');
+	$('#'+e.target.id).css('height','109px');
+	setTimeout(function(){
+		$('#'+e.target.id).css('box-shadow','none');
+		$('#'+e.target.id).css('height','110px');
+	},200);
+});
+	
+	
 function pausecomp(millis)
 {
     var date = new Date();
