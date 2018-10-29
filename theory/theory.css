@@ -6,7 +6,7 @@
 }
 @font-face{
     font-family: "raleway"; /* Гарнитура шрифта */
-    src: url("font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
+    src: url("/font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
 .header {
@@ -53,7 +53,7 @@
 	margin-right: 60px;
 	margin-top: 5px;
 	font-family: "raleway";
-	background-image: url(img/logo.png);
+	background-image: url(/img/logo.png);
 	background-size: cover;
 	background-position: center;
 }

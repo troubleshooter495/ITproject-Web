@@ -228,7 +228,7 @@ $('.blackbtn').click(function(){
 			$('#line4').css('width','0%');
 		});	
 	$('.confirmButton').click(function(){
-		location.href = 'practice.php';
+		location.href = '/practice';
 	});
 </script>
 </body>

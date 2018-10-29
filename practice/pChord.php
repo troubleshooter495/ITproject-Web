@@ -43,10 +43,6 @@
 	$amge = $_GET['amge'];
 	$amtr = $_GET['amtr'];
 	$chords = $_GET['chords'];
-	if(empty($chords)) {
-		array_push($chords, 1);
-	}
-		
 	if ($type == 'chordclassic') {
 		echo("
 	ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'fa2.mp3', 7:'fad1.mp3', 19:'fad2.mp3', 10:'la1.mp3',22:'la2.mp3',11:'lad1.mp3', 23:'lad2.mp3', 5:'mi1.mp3', 17:'mi2.mp3', 3:'re1.mp3', 15:'re2.mp3', 4:'red1.mp3', 16:'red2.mp3', 12:'si1.mp3', 24:'si2.mp3', 8:'so1.mp3', 20:'so2.mp3', 9:'sod1.mp3', 21:'sod2.mp3'};
@@ -334,7 +330,10 @@
 		flag = true;
 	});
 	");}
-	if ($type="chord") {
+	if ($type=="chord") {
+		if(empty($chords)) {
+	 	$chords = '1';
+	}
 		echo("
 ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'fa2.mp3', 7:'fad1.mp3', 19:'fad2.mp3', 10:'la1.mp3',22:'la2.mp3',11:'lad1.mp3', 23:'lad2.mp3', 5:'mi1.mp3', 17:'mi2.mp3', 3:'re1.mp3', 15:'re2.mp3', 4:'red1.mp3', 16:'red2.mp3', 12:'si1.mp3', 24:'si2.mp3', 8:'so1.mp3', 20:'so2.mp3', 9:'sod1.mp3', 21:'sod2.mp3'};
 	nota1=0; nota2 = 0; nota3 =0; nota4 =0;");
@@ -716,7 +715,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 			$('#line4').css('width','0%');
 		});		
 $('.confirmButton').click(function(){
-	location.href = 'practice.php';
+	location.href = '/practice';
 });
 </script>
 </body>

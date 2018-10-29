@@ -9,12 +9,12 @@
 <body id='sss'>
 <div class="midBlock"> 
 	<div class="header">
-		<div class="button" id="button1"><div class="headerButton"><a href="theory.php">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
-		<div class="button" id="button2"><div class="headerButton"><a href="practice.php">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
-		<div class="button" id="button3"><div class="headerButton">Онлайн-пианино<div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-		<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
-		<a class="logo" href="index.php"></a>
-	</div>
+					<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
+					<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
+					<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
+					<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
+					<a class="logo" href="/"></a>
+				</div>
 
 	<div class="container" id="container1">
 		<div class="block" id="first"> <p> Угадывание ноты </p>

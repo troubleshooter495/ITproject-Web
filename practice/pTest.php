@@ -88,7 +88,7 @@ echo("ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3'
 	 	flag=1;
 	 });");
 }
-if($type='int'){
+if($type=='int'){
 	echo("
 	amge =".$amge.";
 	amtr =".$amtr.";
@@ -194,7 +194,7 @@ if($type='int'){
 			$('#line4').css('width','0%');
 		});	
 	$('.confirmButton').click(function(){
-		location.href = 'practice.php';
+		location.href = '/practice';
 	});
 </script>
 </body></html>

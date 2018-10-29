@@ -1,4 +1,4 @@
-﻿* {
+* {
 	margin: 0;
 	padding: 0;
 }
@@ -12,14 +12,14 @@
 
 @font-face{
     font-family: "raleway"; /* Гарнитура шрифта */
-    src: url("font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
+    src: url("/font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
 .midBlock {
 	width: 1100px;
 	height: 1100px;
 	margin: auto;
-	background: lightgray;
+	background: #F0F0F0;
 }
 
 .header {
@@ -66,26 +66,43 @@
 	margin-right: 60px;
 	margin-top: 5px;
 	font-family: "raleway";
-	background-image: url(img/logo.png);
+	background-image: url(/img/logo.png);
 	background-size: cover;
 	background-position: center;
 }
-
 .message {
-	height: 150px;
-	width: 400px;
+	width: 360px;
+	height: 110px;
+	padding: 20px;
 	margin: auto;
-	margin-top: 30px;
-	background: gray;
+	margin-top: 50px;
+	border: 1px solid #D79EE7;
 }
-
-.pianoBlock {
-	height: 180px;
-	width: 550px;
-	padding: 10px 0;
+.testBlock {
+	width: 600px;
+	height: 300px;
 	margin: auto;
-	margin-top: 30px;
-	background: pink;
+	margin-top: 100px;
+}
+.test {
+	float: left;
+	height: 100%;
+	margin-left: 30px;
+	width: 300px;
+	overflow: hidden;
+}
+.replayButton {
+	float:left;
+	width: 150px;
+	height: 150px;
+	margin-left: 20px;
+	margin-top: 60px;
+	background: #F8D311;
+	overflow: hidden;
+}
+.ans {
+	padding: 2px;
+	border: 1px solid #FDEBEC;
 }
 
 .confirmButton {
@@ -93,49 +110,5 @@
 	width: 150px;
 	margin: auto;
 	margin-top: 20px;
-	background: blue;
-}
-
-.piano {
-	float:left;
-	position: relative;
-	width:400px;
-	height: 180px;
-	margin-left: 10px;
-}
-
-.whitebtn {
-	float:left;
-	height: 180px;
-	width: 56.14px;
-	border-right: 1px solid black;
-	background: white;
-	z-index: 1;
-	transition-duration: 0.2s;
-	border-radius: 0 0 4px 4px;
-}
-
-
-.blackbtn {
-	position: absolute;
-	width: 32px;
-	height: 110px;
-	background: black;
-	z-index: 2;
-	border-radius: 0 0 4px 4px;
-	transition-duration: 0.2s;
-}
-
-#dod{ left:40px; } 
-#red{left:98px;}
-#fad{left:213px;}
-#sod{left:270px;}
-#lad{left:326px;}
-
-.replayButton {
-	width: 100px;
-	height: 100px;
-	background: cyan;
-	float:left;
-	margin-left: 20px;	
+	background: #BAFFE4;
 }
