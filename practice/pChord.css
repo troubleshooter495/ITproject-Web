@@ -1,13 +1,16 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "raleway";
+	user-select: none;
 }
 
 .midBlock {
 	width: 1100px;
 	margin: auto;
 	height: 1100px;
-	background: lightgrey;
+	background: #f9ede3;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 @font-face{
@@ -15,17 +18,10 @@
     src: url("/font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
-.midBlock {
-	width: 1100px;
-	height: 1100px;
-	margin: auto;
-	background: #F0F0F0;
-}
-
 .header {
 	width: 1100px;
 	height: 70px;
-	background: yellow;
+	background: #ddccc1;
 }
 .headerButton {
 	float: left;
@@ -71,44 +67,63 @@
 	background-position: center;
 }
 .message {
-	width: 360px;
-	height: 110px;
-	padding: 20px;
+	height: 150px;
+	width: 400px;
 	margin: auto;
-	margin-top: 50px;
-	border: 1px solid #D79EE7;
+	margin-top: 30px;
+	background: #ddccc1;
+	border-radius: 5px;
+	padding: 10px;
 }
 .testBlock {
-	width: 600px;
-	height: 300px;
+	width: 500px;
+	height: 380px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 50px;
+	position: relative;
 }
 .test {
-	float: left;
-	height: 100%;
-	margin-left: 30px;
-	width: 300px;
-	overflow: hidden;
+	float:left;
+	margin-left: 10px;
 }
 .replayButton {
+	width: 98px;
+	height: 100px;
+	background: #ddccc1;
 	float:left;
-	width: 150px;
-	height: 150px;
-	margin-left: 20px;
-	margin-top: 60px;
-	background: #F8D311;
-	overflow: hidden;
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.60);
+	border-radius: 10px;
+	margin-left: 100px;
+	margin-top: 15px;
+	text-align: center;
+	cursor: pointer;
 }
 .ans {
-	padding: 2px;
-	border: 1px solid #FDEBEC;
+	padding: 5px;
+	border-bottom: 1px solid black;
+	cursor: pointer;
 }
 
 .confirmButton {
-	height: 30px;
-	width: 150px;
+	height: 27px;
+	width: 60px;
 	margin: auto;
-	margin-top: 20px;
-	background: #BAFFE4;
+	margin-top: 0px;
+	background: #ddccc1;
+	font-size: 20px;
+	border-radius: 3px;
+	padding: 7px 60px;
+	text-align: center;
+	cursor: pointer;
+}
+body {
+	background: #fffaf7;
+}
+
+#opa {
+	margin: auto;
+	margin-top: 40px;
+	width: 100%;
+	font-size: 20px;
 }

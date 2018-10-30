@@ -17,8 +17,9 @@
 				</div>
 
 	<div class="container" id="container1">
-		<div class="block" id="first"> <p> Угадывание ноты </p>
-
+		<div class="block" id="first"> <p class="title"> Угадывание ноты </p>
+			<div class="fulldesc">В этом режиме вы можете попрактиковаться в определении отдельных нох на слух. Вы услышите одну из нот первой октавы, затем нужно будет выбрать правильный ответ.</div>
+			<p class="downline"> Нажмите для раскрытия меню </p>
 			<div class="overlay" id="overlay1">
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
@@ -32,7 +33,7 @@
 					<p class="tit2" align="center">Пользовательский режим</p>
 					<ul>
 						<li>Количество прослушиваний</li>
-						<li>Количесвто нот</li>
+						<li>Количество нот</li>
 						<li>Язык обозначения нот</li>
 					</ul>
 					<div class="form">
@@ -72,7 +73,9 @@
 	</div>
 
 	<div class="container" id="container2">
-		<div class="block" id="second"> Интервалы 
+		<div class="block" id="second"> <p class="title">Интервалы</p>
+			<div class="fulldesc" id="full2">В этом режиме вы можете попрактиковаться в определении интервалов на слух. Вы услышите один из всех возможных интервалов в пределах октавы, затем нужно будет выбрать правильный ответ.</div>
+			<p class="downline" id ="down2"> Нажмите для раскрытия меню </p>
 			<div class="overlay" id="overlay2"> 
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
@@ -88,7 +91,7 @@
 					<ul>
 						<li>Количество прослушиваний</li>
 						<li>Количесвто интервалов</li>
-						<li>Вводить ответ самому или выбрать из предложенных</li>
+						
 					</ul>
 					<div class="form">
 						<div class="asd">
@@ -114,10 +117,6 @@
 							<option>30</option>
 							</select>
 						</div>
-						<div class="asd">
-							<input type="radio" name="ch" > Вводить <br>
-							<input type="radio" name="ch" checked="checked"> Выбирать
-						</div>
 					</div>
 					<div class="startButton" id="int"> <span>Начать</span> </div>
 				</div> 
@@ -125,7 +124,9 @@
 		</div>
 	</div>
 	<div class="container" id="container3">
-		<div class="block" id="third"> Аккорды 
+		<div class="block" id="third"><p class="title">Аккорды</p>  
+			<div class="fulldesc">В этом режиме вы сможете попрактиковаться в определении аккордов на слух. Вы услышите один из основных аккордов тонанольности, затем нужно будет выбрать правильный ответ.</div>
+			<p class="downline" id="down3"> Нажмите для раскрытия меню </p>
 			<div class="overlay" id="overlay3">
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
@@ -223,8 +224,7 @@ $('#int').click(function(){
 			break;
 		}
 	}
-	if(i==0) window.location = "pPiano.php?type=int&amtr=" + a + "&amge=" + b;
-	if(i==1) window.location = "pTest.php?type=int&amtr=" + a + "&amge=" + b;
+	window.location = "pTest.php?type=int&amtr=" + a + "&amge=" + b;
 });
 
 $('#chord').click(function(){

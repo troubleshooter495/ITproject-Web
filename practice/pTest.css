@@ -2,13 +2,16 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "raleway";
+	user-select: none;
 }
 
 .midBlock {
 	width: 1100px;
 	margin: auto;
 	height: 1100px;
-	background: lightgrey;
+	background: #f9ede3;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 @font-face{
@@ -16,17 +19,10 @@
     src: url("/font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
-.midBlock {
-	width: 1100px;
-	height: 1100px;
-	margin: auto;
-	background: lightgray;
-}
-
 .header {
 	width: 1100px;
 	height: 70px;
-	background: yellow;
+	background: #ddccc1;
 }
 .headerButton {
 	float: left;
@@ -77,37 +73,68 @@
 	width: 400px;
 	margin: auto;
 	margin-top: 30px;
-	background: gray;
+	background: #ddccc1;
+	border-radius: 5px;
+	padding: 10px;
 }
 
 
 .confirmButton {
-	height: 30px;
-	width: 150px;
+	height: 27px;
+	width: 60px;
 	margin: auto;
-	margin-top: 20px;
-	background: blue;
+	margin-top: 0px;
+	background: #ddccc1;
+	font-size: 20px;
+	border-radius: 3px;
+	padding: 7px 60px;
+	text-align: center;
+	cursor: pointer;
 }
 
 .testBlock {
-	width: 400px;
-	height: 200px;
+	width: 460px;
+	height: 310px;
 	margin: auto;
 	margin-top: 50px;
-	background: white;
 	position: relative;
 }
 
 .ans {
+	padding: 5px;
 	width: 198px;
 	height: 16px;
-	border: 1px solid black;
+	border-bottom: 1px solid black;
+	cursor: pointer;
 }
+
+body {
+	background: #fffaf7;
+}
+
 .replayButton {
-	position: absolute;
-	top: 30px;
-	right: 37px;
-	width: 125px;
-	height: 125px;
-	background: pink;
+	width: 98px;
+	height: 100px;
+	background: #ddccc1;
+	float:left;
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.60);
+	border-radius: 10px;
+	margin-left: 100px;
+	margin-top: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.test {
+	float:left;
+	height: 180px;
+	margin-left: 10px;
+}
+
+#opa {
+	margin: auto;
+	margin-top: 40px;
+	width: 100%;
+	font-size: 20px;
 }

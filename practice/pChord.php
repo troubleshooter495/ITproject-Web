@@ -20,24 +20,26 @@
 	</div>
 	<div class="testBlock">
 		<div class="test">
-			<div class="ans" id="T35">Мажорное трезвучие</div>
-			<div class="ans" id="M35">Минорное трезвучие</div>
-			<div class="ans" id="BB">Увеличенное трезвучие</div>
-			<div class="ans" id="MM">Уменьшенное трезвучие</div>
-			<div class="ans" id="B6">Мажорный секстаккорд</div>
-			<div class="ans" id="B46">Мажорный квартсекстаккорд</div>
-			<div class="ans" id="M6">Минорный секстаккорд</div>
-			<div class="ans" id="M46">Минорный квартсекстаккорд</div>
-			<div class="ans" id="D7">Доминантсептаккорд</div>
-			<div class="ans" id="D56">Квинтсептаккорд</div>
-			<div class="ans" id="D34">Терцквартаккорд</div>
-			<div class="ans" id="D2">Секундаккорд</div>	
+			<div class="ans" id="T35">♪ Мажорное трезвучие</div>
+			<div class="ans" id="M35">♪ Минорное трезвучие</div>
+			<div class="ans" id="BB">♪ Увеличенное трезвучие</div>
+			<div class="ans" id="MM">♪ Уменьшенное трезвучие</div>
+			<div class="ans" id="B6">♪ Мажорный секстаккорд</div>
+			<div class="ans" id="B46">♪ Мажорный квартсекстаккорд</div>
+			<div class="ans" id="M6">♪ Минорный секстаккорд</div>
+			<div class="ans" id="M46">♪ Минорный квартсекстаккорд</div>
+			<div class="ans" id="D7">♪ Доминантсептаккорд</div>
+			<div class="ans" id="D56">♪ Квинтсептаккорд</div>
+			<div class="ans" id="D34">♪ Терцквартаккорд</div>
+			<div class="ans" style="border:none;" id="D2">♪ Секундаккорд</div>	
 		</div>
-		<div class="replayButton"></div>
+		<div class="replayButton"><p id="opa">проиграть</p></div>
 	</div>
-	<div class="confirmButton"></div>
+	<div class="confirmButton">выйти</div>
 </div>
 <script>
+	outwrite('Нажмите на кнопку, чтобы услышать звук');
+$('.message').text('Нажмите на кнопку, чтобы услышать звук');
 <?php
 	$type = $_GET['type'];
 	$amge = $_GET['amge'];
@@ -314,7 +316,10 @@
 			curr.playsound();
 			flag = false;
 			pressed = false;
-		}	
+		}
+		else {
+		curr.playsound();
+		}
 	});
 	
 	$('.ans').click(function(){
@@ -322,9 +327,9 @@
 		curname = ch.toString().match(/class ([^(]*)\{/)[1].replace(/\s/g, '');
 		if(!pressed) {
 			if(curname == id)
-				$('.message').text('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+				outwrite('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
 			else
-				$('.message').text('Неверно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+				outwrite('Неверно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
 			pressed = true;
 		}
 		flag = true;
@@ -632,25 +637,26 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 			pressed = false;
 		}	
 	});
-	
+	correctans = 0;
 	$('.ans').click(function(){
 		id = $(this).attr('id');
 		curname = ch.toString().match(/class ([^(]*)\{/)[1].replace(/\s/g, '');
 		if(!pressed){
 				if(curname == id){
-					$('.message').text('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+					outwrite('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
 					curtr = 1;
 					pressed = true;
 					flag = true;
 					step++;
+					correctans += 1;
 				} else {
 					if(curtr<amtr){
-						$('.message').text('Неверно. У вас остались еще попытки, попробуйте еще раз');
+						outwrite('Неверно. У вас остались еще попытки, попробуйте еще раз');
 						curtr++;
 						curr.playsound();
 					}
 					else {
-						$('.message').text('Неверно, попытки кончились. Правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+						outwrite('Неверно, попытки кончились. Правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
 						curtr = 1;
 						pressed = true;
 						flag = true;
@@ -660,7 +666,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 				if (step == amge) {
 					var kotik= 'Верно,';
 					if(curname!=id) kotik ='Неверно,'
-					$('.message').text(kotik + ' правильный ответ - ' + curname + '. Практика завершена!');
+					outwrite(kotik + ' правильный ответ - ' + curname + '. Практика завершена! Вы набрали ' + correctans +' из ' + amge + 'правильных ответов.');
 					pressed = true;
 					flag = false;
 				}
@@ -689,6 +695,25 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 		");
 	}
 ?>
+		var curfunid = 0;
+function outwrite(b){
+	curfunid +=1;
+	var tt = curfunid;
+	var temp = '';
+	var len = b.length;
+	$('.message').text('');
+	var j=0;
+	setInterval(function(){
+	if(j < len &&  curfunid==tt){
+		temp += b[j];
+		$('.message').text(temp);
+		j+=1; 
+	}  else if (curfunid!=tt){
+		return;
+	}
+	},20);
+	
+}
 	
 		$('#button1').mouseover(function(){
 			$('#line1').css('width','100%');

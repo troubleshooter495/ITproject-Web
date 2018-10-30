@@ -5,11 +5,6 @@
 	<title>Piano</title>
 	<link rel="stylesheet" href="index.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	
-	
-	
-	
-    <link rel="stylesheet" href="piano.css"/>
     <script src="vendor/jquery-1.7.2.min.js"></script>
     <script src="vendor/jquery-ui-1.8.20.custom.min.js"></script>
 	
@@ -23,9 +18,11 @@
 					<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
 					<a class="logo" href="/"></a>
 				</div>
-	<div class="pianoContainer">
-			
-			
+	<div class="description">
+		<h1>Онлайн-пианино</h1>
+		<p class="disc">Здесь вы можете попробовать себя в роли пианиста или повторить звучание каких-либо конкретных нот. Данное пианино поддерживает клавиатуру: <br> Клавиши Z-M (Я-Ь) белые клавиши от ля до соль первой октавы. <br>Клавиши S,F,G,J,K (Ы,А,П,О,Л) - черные клавиши от ля# до соль# первой октавы. <br>Клавиши Q-P (Й-З) - белые клавиши от ля до до второй октавы. <br>Клавиши 2,4,5,7,8,9 - черные клавиши второй октавы  </p>
+	</div>
+	<div class="pianoContainer">		
 		<audio id="sound-A2" src="samples/A2.ogg" preload="auto"></audio>
     	<audio id="sound-Bb2" src="samples/Bb2.ogg" preload="auto"></audio>
     	<audio id="sound-B2" src="samples/B2.ogg" preload="auto"></audio>
@@ -87,7 +84,6 @@
     	      <div class="piano-white piano-B4"></div>
     	      <div class="piano-white piano-C5"></div>
     	    </div>
-    	    <div class="piano-pedal">Just listen to that sustain!</div>
     	  </div>
     	</div>
 		
@@ -96,13 +92,8 @@
 	
 	
     <script src="piano.js"></script>
-    <p style="text-align:center; font-size:smaller;">
-      <a href="https://github.com/michaelmp/js-piano">source code</a>
-    </p>
-	
-	
-	
-	
+
+			
 <script>
 		$('.white').click(function(){
 			id = $(this).attr('id');

@@ -22,6 +22,7 @@
 					<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
 					<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
 					<a class="logo" href="/"></a>
+					<span onclick="openNav()" class="open">Разделы   &#9776;</span>
 				</div>
 	<div class="articleHolder">
 		<div class="article" id="ar1">
@@ -46,6 +47,8 @@
 	</div>
 </div>
 	<script>
+		l = $('.header').position().left + 1100 - $('.sideNav').width();
+		$('.sideNav').css({left: l});
 		var isNavOpen = 0;
 		$(window).click(function(e){
 			if(e.target.className!='navFill' && e.target.className!='sideNav' && e.target.className!='open'){

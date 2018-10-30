@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	user-select: none;
+	font-family: "raleway";
 }
 a{
     text-decoration: inherit;
@@ -15,9 +16,8 @@ a{
 
 .midBlock {
 	width: 1100px;
-	height: 1100px;
 	margin: auto;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .header {
@@ -78,6 +78,7 @@ a{
 	position: relative;
 	width: 1100px;
 	height: 300px;
+	cursor: pointer;
 }
 .overlay {
   position: absolute;
@@ -91,6 +92,7 @@ a{
   transition: .5s ease;
   font-size: 16px;
   text-align: left;
+  cursor: default;
 }
 
 /*#container2:hover #overlay2 {
@@ -158,6 +160,7 @@ ul {
 	margin: auto;
 	margin-top: 165px;
 	padding: 5px;
+	cursor: pointer;
 }
 
 .qwe {
@@ -165,27 +168,66 @@ ul {
 	margin-left: 40px;
 }
 #first{
-    padding-top: 20px;
+   /* padding-top: 20px;*/
     background: #ddccc1;
     font-size: 26px;
     font-family: Helvetica;
     text-align: center;
 }
 #second{
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     background: #f9ede3;
     font-size: 26px;
     font-family: Helvetica;
     text-align: center;
 }
 #third{
-    padding-top: 20px;
-    background: #fffaf7;
+    /*padding-top: 20px;*/
+    background: #ddccc1;
     font-size: 26px;
     font-family: Helvetica;
     text-align: center;
 }
 #button1{
-    padding-left: 40px;
+    padding-left: 0px;
     
+}
+.title {
+	font-size: 1.5em;
+	text-align: left;
+	padding: 110px 60px 0;
+}
+
+.fulldesc {
+	width: 450px;
+	font-size: 0.8em;
+	text-align: inherit;
+	position: relative;
+	bottom: 80px;
+	left: 600px;
+	
+}
+
+.downline {
+	position: relative;
+	font-size: 0.6em;
+	color:rgba(0,0,0,0.30);
+	word-spacing: 30px;
+	bottom: 15px;
+}
+
+body {
+	background: #fffaf7;
+}
+
+
+
+#down2 {
+	bottom: 40px;
+}
+
+
+
+#down3 {
+	bottom: 30px;
 }

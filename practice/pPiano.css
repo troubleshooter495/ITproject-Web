@@ -1,13 +1,16 @@
 ﻿* {
 	margin: 0;
 	padding: 0;
+	font-family: "raleway";
+	user-select: none;
 }
 
 .midBlock {
 	width: 1100px;
 	margin: auto;
 	height: 1100px;
-	background: lightgrey;
+	background: #f9ede3;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 @font-face{
@@ -15,17 +18,10 @@
     src: url("/font/raleway/Raleway-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
-.midBlock {
-	width: 1100px;
-	height: 1100px;
-	margin: auto;
-	background: lightgray;
-}
-
 .header {
 	width: 1100px;
 	height: 70px;
-	background: yellow;
+	background: #ddccc1;
 }
 .headerButton {
 	float: left;
@@ -76,7 +72,9 @@
 	width: 400px;
 	margin: auto;
 	margin-top: 30px;
-	background: gray;
+	background: #ddccc1;
+	border-radius: 5px;
+	padding: 10px;
 }
 
 .pianoBlock {
@@ -85,21 +83,25 @@
 	padding: 10px 0;
 	margin: auto;
 	margin-top: 30px;
-	background: pink;
 }
 
 .confirmButton {
-	height: 30px;
-	width: 150px;
+	height: 27px;
+	width: 60px;
 	margin: auto;
 	margin-top: 20px;
-	background: blue;
+	background: #ddccc1;
+	font-size: 20px;
+	border-radius: 3px;
+	padding: 7px 60px;
+	text-align: center;
+	cursor: pointer;
 }
 
 .piano {
 	float:left;
 	position: relative;
-	width:400px;
+	width:420px;
 	height: 180px;
 	margin-left: 10px;
 }
@@ -109,10 +111,13 @@
 	height: 180px;
 	width: 56.14px;
 	border-right: 1px solid black;
+	border-left:  1px solid black;
+	border-bottom: 1px solid black;
 	background: white;
 	z-index: 1;
 	transition-duration: 0.2s;
 	border-radius: 0 0 4px 4px;
+	border-top: 12px solid black;
 }
 
 
@@ -124,6 +129,7 @@
 	z-index: 2;
 	border-radius: 0 0 4px 4px;
 	transition-duration: 0.2s;
+	border-top: 12px solid black;
 }
 
 #dod{ left:40px; } 
@@ -133,9 +139,25 @@
 #lad{left:326px;}
 
 .replayButton {
-	width: 100px;
+	width: 98px;
 	height: 100px;
-	background: cyan;
+	background: #ddccc1;
 	float:left;
-	margin-left: 20px;	
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.60);
+	border-radius: 10px;
+	margin-left: 20px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+body {
+	background: #fffaf7;
+}
+
+#opa {
+	margin: auto;
+	margin-top: 40px;
+	width: 100%;
+	font-size: 20px;
 }

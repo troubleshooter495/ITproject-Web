@@ -27,22 +27,26 @@
 			<div class="whitebtn" id="re"> </div>
 			<div class="whitebtn" id="mi"> </div>
 			<div class="whitebtn" id="fa"> </div>
-			<div class="whitebtn" id="sol"> </div>
+			<div class="whitebtn" id="so"> </div>
 			<div class="whitebtn" id="la"> </div>
-			<div class="whitebtn" style="border-right: none" id="si"> </div>
+			<div class="whitebtn" id="si"> </div>
 			<div class="blackbtn" id="dod"></div>
 			<div class="blackbtn" id="red"></div>
 			<div class="blackbtn" id="fad"></div>
 			<div class="blackbtn" id="sod"></div>
 			<div class="blackbtn" id="lad"></div>
 		</div>
-		<div class="replayButton"></div>
+		<div class="replayButton">
+			<p id="opa">проиграть</p>
+		</div>
 	</div>
-	<div class="confirmButton"></div>
+	<div class="confirmButton">выйти</div>
 </div>
 
 
 <script>
+
+	
 $('.whitebtn').on('click touchstart', function(e){
 	$('#'+e.target.id).css('box-shadow','inset 0 0 10px rgba(0,0,0,0.9)');
 	setTimeout(function(){
@@ -66,13 +70,14 @@ function pausecomp(millis)
     do { curDate = new Date(); }
     while(curDate-date < millis);
 }
-
+outwrite('Нажмите на кнопку, чтобы услышать звук');
+$('.message').text('Нажмите на кнопку, чтобы услышать звук');
 <?php
 	$type = $_GET['type'];
 	$amge = $_GET['amge'];
 	$amtr = $_GET['amtr'];
 if ($type=="notaclassic"){
-	echo("flag = 1
+	echo("flag = 1;
 	$('.replayButton').click(function(){
 		if(flag==1){
 			ways = ['do1.mp3', 'do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3',
@@ -85,30 +90,33 @@ if ($type=="notaclassic"){
 			a.src = 'mus/' + ways[r];
 			a.play();
 			flag = 0;
+			anspressed = false;
+	} else {
+		a.play();
 	}
 	});
-
 	$('.whitebtn').click(function(){
 	 	but = $(this).attr('id');
+		if(!anspressed){
 	 	if(but + num + '.mp3'==ways[r]){
-	 		$('.message').text(' ');
-	 		$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
+	 		outwrite('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	}
-	 	else {
-	 		$('.message').text(' '); 
-	 		$('.message').text('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');}
+	 	else { 
+	 		outwrite('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');}
 	 	flag = 1;
+		anspressed = true;
+		}
 	});
 	$('.blackbtn').click(function(){
 	 	but = $(this).attr('id');
+		if(!anspressed){
 	 	if(but + num + '.mp3'==ways[r]){
-	 		$('.message').text(' ');
-	 		$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
+	 		outwrite('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	} else {
-	 		$('.message').text(' ');
-	 		$('.message').text('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');
+	 		outwrite('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');
 	 	}
 	 	flag = 1;
+		anspressed = true;}
 	});");
 }
 else if($type=="nota"){
@@ -130,19 +138,19 @@ for(var i = 0; i < amge; i++){
 function checkSound() {
 	if(but + num + '.mp3'==ways[r]){
 		 		$('.message').text('');
-			 	$('.message').text('Верно. Нажмите на конпку чтобы услышать следующий звук');
+			 	outwrite('Верно. Нажмите на конпку чтобы услышать следующий звук');
 			 	tr = 1;
 				id++;
 		 		flag = 1;
 				answers.push(true);
 		 	} else {
 		 	 		if(tr < amtr) { 
-			 			$('.message').text('Неверно, у вас осталось ' + (Number(amtr) - Number(tr)).toString() + ' попыток' );
+			 			outwrite('Неверно, у вас осталось ' + (Number(amtr) - Number(tr)).toString() + ' попыток' );
 			 			a.play();
 			 			tr++;
 		 		} 
 		 		else if(tr == amtr){
-				 		$('.message').text('Неверно, попытки кончились, правильный ответ - нота ' + name + '. Нажмите на конпку чтобы услышать следующий звук');
+				 		outwrite('Неверно, попытки кончились, правильный ответ - нота ' + name + '. Нажмите на конпку чтобы услышать следующий звук');
 				 		tr = 1;
 				 		id++;
 						flag = 1;
@@ -162,7 +170,7 @@ function finishProg() {
 	pausecomp(100);
 	var numma = correctNum().toString();
 	var lenna =answers.length.toString();
-	$('.message').text('Практика завершена. Вы набрали ' + numma + ' из '  + lenna + ' правильных ответов');
+	outwrite('Практика завершена. Вы набрали ' + numma + ' из '  + lenna + ' правильных ответов.');
 }
 
 $('.replayButton').click(function(){ 
@@ -200,8 +208,26 @@ $('.blackbtn').click(function(){
 }
 
 ?>
-
-
+	
+var curfunid = 0;
+function outwrite(b){
+	curfunid +=1;
+	var tt = curfunid;
+	var temp = '';
+	var len = b.length;
+	$('.message').text('');
+	var j=0;
+	setInterval(function(){
+	if(j < len &&  curfunid==tt){
+		temp += b[j];
+		$('.message').text(temp);
+		j+=1; 
+	}  else if (curfunid!=tt){
+		return;
+	}
+	},20);
+	
+}
 
 	$('#button1').mouseover(function(){
 			$('#line1').css('width','100%');
