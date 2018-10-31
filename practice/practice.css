@@ -231,3 +231,14 @@ body {
 #down3 {
 	bottom: 30px;
 }
+
+#fourth{
+    background: #f9ede3;
+    font-size: 26px;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+#chord {
+	position:inherit;
+}

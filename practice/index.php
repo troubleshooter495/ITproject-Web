@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>IVR</title>
+<title>Практика</title>
 <link rel="stylesheet" href="practice.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
@@ -178,12 +178,62 @@
 						<div class="qwe"><input type="checkbox" name="type3" value="3"> </div>
 						<div class="qwe"><input type="checkbox" name="type3" value="4"> </div>
 					</div>
-					<div class="startButton" id="chord"> <span>Начать</span></div>
+					<div class="startButton" id="chord"> <span style="position: relative;bottom: 15px;">Начать</span></div>
 				</div> 
 			</div>
 		</div>
 	</div>
+		<div class="container" id="container4">
+		<div class="block" id="fourth"> <p class="title"> Тестирование </p>
+			<div class="fulldesc">В этом режиме вы можете пройти заранее созданные тесты как по теории, так и по определению на слух, а также создать свой тест.</div>
+			<p class="downline"> Нажмите для раскрытия меню </p>
+			<div class="overlay" id="overlay4">
+				<div class="classic">
+					<p class="tit2" align="center">Пройти тест.</p>
+						 
+				</div>
+				<div class="user">
+					<p class="tit2" align="center">Создать тест.</p>
+					<ul>
+						<li>Количество прослушиваний</li>
+						<li>Количество нот</li>
+						<li>Язык обозначения нот</li>
+					</ul>
+					<div class="form">
+							<div class="asd">
+							<select id="amtr3">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>	
+							</div>
+							<div class="asd">
+							<select id="amge3">
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>20</option>
+								<option>30</option>
+							</select>
+							<div class="asd">
+							<input type="radio" name="l1" checked="checked"> Рус
+							<input type="radio" name="l1"> Eng
+							</div>
+						</div>
+					</div>
 
+					<div class="startButton" id="test"> <span>Начать</span></div> 
+				</div>
+			</div>
+		</div>
+	</div>
 
 <script>
 
@@ -256,6 +306,7 @@ $(window).click(function(x){
 	var a = $('#overlay1').css('height');
 	var b = $('#overlay2').css('height');
 	var c = $('#overlay3').css('height');
+	var d = $('#overlay4').css('height');
 	if(id =='sss' && a!='0px'){
 		$('#overlay1').css('bottom','100%');
 		$('#overlay1').css('height','0');
@@ -265,6 +316,9 @@ $(window).click(function(x){
 	}if(id =='sss' && c!='0px'){
 		$('#overlay3').css('bottom','100%');
 		$('#overlay3').css('height','0');
+	}if(id =='sss' && d!='0px'){
+		$('#overlay4').css('bottom','100%');
+		$('#overlay4').css('height','0');
 	}
 });
 
@@ -278,6 +332,9 @@ $('#container2').click(function(){
 	}if($('#overlay1').css('height')!='0px'){
 		$('#overlay1').css('bottom','100%');
 		$('#overlay1').css('height','0');
+	}if($('#overlay4').css('height')!='0px'){
+		$('#overlay4').css('bottom','100%');
+		$('#overlay4').css('height','0');
 	}
 });
 $('#container3').click(function(){
@@ -290,6 +347,24 @@ $('#container3').click(function(){
 	}if($('#overlay1').css('height')!='0px'){
 		$('#overlay1').css('bottom','100%');
 		$('#overlay1').css('height','0');
+	}if($('#overlay4').css('height')!='0px'){
+		$('#overlay4').css('bottom','100%');
+		$('#overlay4').css('height','0');
+	}
+});
+$('#container4').click(function(){
+	var b = $('#overlay4').css('height');
+		$('#overlay4').css('bottom','0');
+		$('#overlay4').css('height','100%');
+	if($('#overlay2').css('height')!='0px'){
+		$('#overlay2').css('bottom','100%');
+		$('#overlay2').css('height','0');
+	}if($('#overlay1').css('height')!='0px'){
+		$('#overlay1').css('bottom','100%');
+		$('#overlay1').css('height','0');
+	}if($('#overlay3').css('height')!='0px'){
+		$('#overlay3').css('bottom','100%');
+		$('#overlay3').css('height','0');
 	}
 });
 

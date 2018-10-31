@@ -10,6 +10,7 @@
 }
 
 .header {
+	position: fixed;
 	width: 1100px;
 	height: 70px;
 	background: #ddccc1;
@@ -73,11 +74,11 @@
 }
 
 .sideNav {
-	position: absolute;
+	position: fixed;
 	width: 260px;
 	left: 0px;
 	height: 0px;
-	background: #E7CAC5;
+	background: #ddccc1;
 	overflow-x: hidden;
     transition: 0.5s;
 	z-index: 1;
@@ -143,4 +144,27 @@
 .footer {
 	padding: 20px 100px;
 	font-family: Helvetica;
+}
+
+.ex {
+	width: 900px;
+	margin: 5px auto;
+	text-align: center;
+}
+
+img {
+	margin: 5px 0;
+}
+
+p {
+	text-indent: 10px;
+	margin-top: 5px;
+}
+
+#ar5 {
+	background: #fffaf7; 
+}
+
+#ar6 {
+	background: #f9ede3;
 }
