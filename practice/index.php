@@ -18,13 +18,13 @@
 
 	<div class="container" id="container1">
 		<div class="block" id="first"> <p class="title"> Угадывание ноты </p>
-			<div class="fulldesc">В этом режиме вы можете попрактиковаться в определении отдельных нох на слух. Вы услышите одну из нот первой октавы, затем нужно будет выбрать правильный ответ.</div>
+			<div class="fulldesc">В этом режиме вы можете попрактиковаться в определении отдельных нот на слух. Вы услышите одну из нот первой октавы, затем нужно будет выбрать правильный ответ.</div>
 			<p class="downline"> Нажмите для раскрытия меню </p>
 			<div class="overlay" id="overlay1">
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
 					<ul>
-						<li>Бесконечное количество прослушиваний</li>
+						<li>Бесконечное количество попыток</li>
 						<li>Бесконечное количество нот</li>
 					</ul>	
 					<div class="startButton" id="notaclassic"> <span>Начать</span></div>	 
@@ -32,9 +32,9 @@
 				<div class="user">
 					<p class="tit2" align="center">Пользовательский режим</p>
 					<ul>
-						<li>Количество прослушиваний</li>
+						<li>Количество попыток</li>
 						<li>Количество нот</li>
-						<li>Язык обозначения нот</li>
+
 					</ul>
 					<div class="form">
 							<div class="asd">
@@ -59,10 +59,7 @@
 								<option>20</option>
 								<option>30</option>
 							</select>
-							<div class="asd">
-							<input type="radio" name="l1" checked="checked"> Рус
-							<input type="radio" name="l1"> Eng
-							</div>
+
 						</div>
 					</div>
 
@@ -80,7 +77,7 @@
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
 					<ul>
-						<li>Бесконечное количество прослушиваний</li>
+						<li>Бесконечное количество попыток</li>
 						<li>Бесконечное количество интервалов</li>
 						<li>Выбрать правильный ответ из предложенных</li>
 					</ul>	
@@ -89,8 +86,8 @@
 				<div class="user">
 					<p class="tit2" align="center">Пользовательский режим.</p>
 					<ul>
-						<li>Количество прослушиваний</li>
-						<li>Количесвто интервалов</li>
+						<li>Количество попыток</li>
+						<li>Количество интервалов</li>
 						
 					</ul>
 					<div class="form">
@@ -131,7 +128,7 @@
 				<div class="classic">
 					<p class="tit2" align="center">Классический режим.</p>
 					<ul>
-						<li>Бесконечное количество прослушиваний</li>
+						<li>Бесконечное количество попыток</li>
 						<li>Бесконечное количество аккордов</li>
 						<li>Случайный аккорд из всех возможных</li>
 						<li>Выбрать правильный ответ из предложенных</li>
@@ -141,7 +138,7 @@
 				<div class="user">
 					<p class="tit2" align="center">Пользовательский режим.</p>
 					<ul>
-						<li>Количество прослушиваний</li>
+						<li>Количество попыток</li>
 						<li>Количесвто интервалов</li>
 						
 						<li>Тонические трезвучия</li>
@@ -178,7 +175,7 @@
 						<div class="qwe"><input type="checkbox" name="type3" value="3"> </div>
 						<div class="qwe"><input type="checkbox" name="type3" value="4"> </div>
 					</div>
-					<div class="startButton" id="chord"> <span style="position: relative;bottom: 15px;">Начать</span></div>
+					<div class="startButton" id="chord"> <span>Начать</span></div>
 				</div> 
 			</div>
 		</div>
@@ -195,9 +192,10 @@
 				<div class="user">
 					<p class="tit2" align="center">Создать тест.</p>
 					<ul>
-						<li>Количество прослушиваний</li>
-						<li>Количество нот</li>
-						<li>Язык обозначения нот</li>
+						<li>Количество попыток</li>
+						<li>Ноты</li>
+						<li>Интервалы</li>
+						<li>Аккорды</li>
 					</ul>
 					<div class="form">
 							<div class="asd">
@@ -215,17 +213,30 @@
 							</select>	
 							</div>
 							<div class="asd">
-							<select id="amge3">
+							<select id="amn">
+								<option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
 								<option>5</option>
 								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-								<option>30</option>
 							</select>
-							<div class="asd">
-							<input type="radio" name="l1" checked="checked"> Рус
-							<input type="radio" name="l1"> Eng
-							</div>
+							<select id="amint">
+								<option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>5</option>
+								<option>10</option>
+							</select>
+							<select id="amch">
+								<option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>5</option>
+								<option>10</option>
+							</select>
 						</div>
 					</div>
 
@@ -252,15 +263,7 @@ $('#chordclassic').click(function(){
 $('#nota').click(function(){
 	var a = $('#amtr  option:selected').text();
 	var b = $('#amge  option:selected').text();
-	var c = "0";
-	var radios = $( "input[name='l1']" );
-	for (var i = 0; i < radios.length; i++){
-		if (radios[i].checked){
-			c = i;
-			break;
-		}
-	}
-	window.location = "pPiano.php?type=nota&amtr=" + a + "&amge=" + b + "&ln=" + c;
+	window.location = "pPiano.php?type=nota&amtr=" + a + "&amge=" + b;
 });
 
 $('#int').click(function(){
@@ -287,6 +290,13 @@ $('#chord').click(function(){
 	window.location = "pChord.php?type=chord&amtr=" + a + "&amge=" + b + "&chords=" + arr;
 	
 });
+$('#test').click(function(){
+	var a = $('#amtr3  option:selected').text();
+	var b = $('#amn  option:selected').text();
+	var c = $('#amint  option:selected').text();
+	var d = $('#amch  option:selected').text();
+	window.location = "test.php?&amtr=" + a + "&amn=" + b + "&amint=" + c + "&amch=" + d;
+})
 
 $('#container1').click(function(){
 	var b = $('#overlay1').css('height');

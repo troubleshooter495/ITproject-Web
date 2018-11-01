@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="theory.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
+<body>
 <div class="sideNav">
 	<div class="navFill">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -235,6 +236,6 @@
 			$('body,html').animate({scrollTop: top}, 1000);
 		});
 	</script>
-<body>
+
 </body>
 </html>
