@@ -80,7 +80,7 @@ if ($type=="notaclassic"){
 	echo("flag = 1;
 	$('.replayButton').click(function(){
 		if(flag==1){
-			ways = ['do1.mp3', 'do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3',
+			ways = ['do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3',
 				'lad1.mp3', 'mi1.mp3', 're1.mp3', 'red1.mp3', 'si1.mp3', 'so1.mp3', 'sod1.mp3'];
 			r = Math.floor(Math.random() * ways.length);
 			a = new Audio();
@@ -102,7 +102,7 @@ if ($type=="notaclassic"){
 	 		outwrite('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	}
 	 	else { 
-	 		outwrite('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');}
+	 		outwrite('Неверно, правильный ответ - нота ' + normalized(name) + ' Нажмите на конпку чтобы услышать следующий звук');}
 	 	flag = 1;
 		anspressed = true;
 		}
@@ -113,7 +113,7 @@ if ($type=="notaclassic"){
 	 	if(but + num + '.mp3'==ways[r]){
 	 		outwrite('Верно. Нажмите на конпку чтобы услышать следующий звук');
 	 	} else {
-	 		outwrite('Неверно, правильный ответ - нота ' + name + ' Нажмите на конпку чтобы услышать следующий звук');
+	 		outwrite('Неверно, правильный ответ - нота ' + normalized(name) + ' Нажмите на конпку чтобы услышать следующий звук');
 	 	}
 	 	flag = 1;
 		anspressed = true;}
@@ -150,7 +150,7 @@ function checkSound() {
 			 			tr++;
 		 		} 
 		 		else if(tr == amtr){
-				 		outwrite('Неверно, попытки кончились, правильный ответ - нота ' + name + '. Нажмите на конпку чтобы услышать следующий звук');
+				 		outwrite('Неверно, попытки кончились, правильный ответ - нота ' + normalized(name) + '. Нажмите на конпку чтобы услышать следующий звук');
 				 		tr = 1;
 				 		id++;
 						flag = 1;
@@ -208,6 +208,13 @@ $('.blackbtn').click(function(){
 }
 
 ?>
+	//['do1.mp3', 'do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3', 'lad1.mp3', 'mi1.mp3', 're1.mp3', 'red1.mp3', 'si1.mp3', 'so1.mp3', 'sod1.mp3']
+function normalized(nota){
+	var kkk = {'do':'До','dod':'До#','re':'Ре','red':'Ре#','mi':'Ми','fa':'Фа','fad':'Фа#','so':'Соль','sod':'Соль#','la':'Ля','lad':'Ля#','si':'Си'};
+	return kkk[nota];
+}
+	
+	
 	
 var curfunid = 0;
 function outwrite(b){

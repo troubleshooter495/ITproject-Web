@@ -7,6 +7,15 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
+	<?php
+		$type = $_GET['type'];
+		$amge = $_GET['amge'];
+		$amtr = $_GET['amtr'];
+		$chords = $_GET['chords'];
+		if(empty($chords)) {
+	 		$chords = '1';
+		}
+	?>
 <div class="midBlock">
 	<div class="header">
 		<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
@@ -20,18 +29,34 @@
 	</div>
 	<div class="testBlock">
 		<div class="test">
-			<div class="ans" id="T35">♪ Мажорное трезвучие</div>
-			<div class="ans" id="M35">♪ Минорное трезвучие</div>
-			<div class="ans" id="BB">♪ Увеличенное трезвучие</div>
-			<div class="ans" id="MM">♪ Уменьшенное трезвучие</div>
-			<div class="ans" id="B6">♪ Мажорный секстаккорд</div>
-			<div class="ans" id="B46">♪ Мажорный квартсекстаккорд</div>
-			<div class="ans" id="M6">♪ Минорный секстаккорд</div>
-			<div class="ans" id="M46">♪ Минорный квартсекстаккорд</div>
-			<div class="ans" id="D7">♪ Доминантсептаккорд</div>
-			<div class="ans" id="D56">♪ Квинтсептаккорд</div>
-			<div class="ans" id="D34">♪ Терцквартаккорд</div>
-			<div class="ans" style="border:none;" id="D2">♪ Секундаккорд</div>	
+			<?php
+				if(strpos($chords,'1')!==false || $type=='chordclassic'){
+					echo("<div class='ans' id='T35'>♪ Мажорное трезвучие</div>
+			<div class='ans' id='M35'>♪ Минорное трезвучие</div>");
+				}
+			?>
+			<?php
+				if(strpos($chords,'2')!==false || $type=='chordclassic'){
+					echo("
+			<div class='ans' id='BB'>♪ Увеличенное трезвучие</div>
+			<div class='ans' id='MM'>♪ Уменьшенное трезвучие</div>");}
+					?>
+			<?php
+				if(strpos($chords,'3')!==false || $type=='chordclassic'){
+					echo("	
+			<div class='ans' id='B6'>♪ Мажорный секстаккорд</div>
+			<div class='ans' id='B46'>♪ Мажорный квартсекстаккорд</div>
+			<div class='ans' id='M6'>♪ Минорный секстаккорд</div>
+			<div class='ans' id='M46'>♪ Минорный квартсекстаккорд</div>");}
+					?>
+			<?php
+				if(strpos($chords,'4')!==false || $type=='chordclassic'){
+					echo("	
+			<div class='ans' id='D7'>♪ Доминантсептаккорд</div>
+			<div class='ans' id='D56'>♪ Квинтсептаккорд</div>
+			<div class='ans' id='D34'>♪ Терцквартаккорд</div>
+			<div class='ans' style='border:none;' id='D2'>♪ Секундаккорд</div>");}
+					?>
 		</div>
 		<div class="replayButton"><p id="opa">проиграть</p></div>
 	</div>
@@ -328,23 +353,20 @@ $('.message').text('Нажмите на кнопку, чтобы услышат�
 		curname = ch.toString().match(/class ([^(]*)\{/)[1].replace(/\s/g, '');
 		if(!pressed) {
 			if(curname == id)
-				outwrite('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+				outwrite('Верно, правильный ответ - ' + normalized(curname) + '. Нажмите кнопку, чтобы услышать следующий звук');
 			else
-				outwrite('Неверно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+				outwrite('Неверно, правильный ответ - ' + normalized(curname) + '. Нажмите кнопку, чтобы услышать следующий звук');
 			pressed = true;
 		}
 		flag = true;
 	});
-	");}
-	if ($type=="chord") {
-		if(empty($chords)) {
-	 	$chords = '1';
+	");
 	}
+	if($type == 'chord') {
 		echo("
 ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'fa2.mp3', 7:'fad1.mp3', 19:'fad2.mp3', 10:'la1.mp3',22:'la2.mp3',11:'lad1.mp3', 23:'lad2.mp3', 5:'mi1.mp3', 17:'mi2.mp3', 3:'re1.mp3', 15:'re2.mp3', 4:'red1.mp3', 16:'red2.mp3', 12:'si1.mp3', 24:'si2.mp3', 8:'so1.mp3', 20:'so2.mp3', 9:'sod1.mp3', 21:'sod2.mp3'};
 	nota1=0; nota2 = 0; nota3 =0; nota4 =0;");
-	if(strpos($chords,'1')!==false){ 
-		echo("
+	if(strpos($chords,'1')!==false){ echo("
 		class T35 {
 		constructor(nota){
 			if (nota >17)
@@ -427,8 +449,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 			a3.play();
 		}
 	}");}
-	if(strpos($chords,'3')!==false){
-		echo("
+	if(strpos($chords,'3')!==false){echo("
 	class B6 {
 		constructor(nota){
 			if (nota >16)
@@ -509,8 +530,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 			a3.play();
 		}
 	}");}
-	if(strpos($chords,'4')!==false){
-		echo("
+	if(strpos($chords,'4')!==false){echo("
 	class D7 {
 		constructor(nota){
 			if (nota >14)
@@ -644,7 +664,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 		curname = ch.toString().match(/class ([^(]*)\{/)[1].replace(/\s/g, '');
 		if(!pressed){
 				if(curname == id){
-					outwrite('Верно, правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+					outwrite('Верно, правильный ответ - ' + normalized(curname) + '. Нажмите кнопку, чтобы услышать следующий звук');
 					curtr = 1;
 					pressed = true;
 					flag = true;
@@ -657,7 +677,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 						curr.playsound();
 					}
 					else {
-						outwrite('Неверно, попытки кончились. Правильный ответ - ' + curname + '. Нажмите кнопку, чтобы услышать следующий звук');
+						outwrite('Неверно, попытки кончились. Правильный ответ - ' + normalized(curname) + '. Нажмите кнопку, чтобы услышать следующий звук');
 						curtr = 1;
 						pressed = true;
 						flag = true;
@@ -667,7 +687,7 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 				if (step == amge) {
 					var kotik= 'Верно,';
 					if(curname!=id) kotik ='Неверно,'
-					outwrite(kotik + ' правильный ответ - ' + curname + '. Практика завершена! Вы набрали ' + correctans +' из ' + amge + 'правильных ответов.');
+					outwrite(kotik + ' правильный ответ - ' + normalized(curname) + '. Практика завершена! Вы набрали ' + correctans +' из ' + amge + 'правильных ответов.');
 					pressed = true;
 					flag = false;
 				}
@@ -696,6 +716,12 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 		");
 	}
 ?>
+
+	function normalized(nota){
+		goven = {'M35':'Минорное трезвучие(М35)','T35':'Мажорное трезвучие(T35)','BB':'Увеличенное трезвучие','MM':'Уменьшенное трезвучие','B6':'Мажорный секстаккорд(B6)','M6':'Минорный секстаккорд(M6)','M46':'Минорный квартсекстаккорд(M46)','B46':'Мажорный квартсекстаккорд(B46)','D7':'Доминантсептаккорд(D7)','D56':'Квинтсептаккорд(D56)','D34':'Терцквартаккорд(D34)','D2':'Секундаккорд(D2)'}
+		return goven[nota];
+	}
+	
 		var curfunid = 0;
 function outwrite(b){
 	curfunid +=1;

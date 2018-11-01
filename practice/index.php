@@ -287,6 +287,9 @@ $('#chord').click(function(){
 	$('input[name="type3"]:checked').each(function() {
 		arr.push(this.value);
 	});
+	if(arr!=[]){
+		arr = '1';
+	}
 	window.location = "pChord.php?type=chord&amtr=" + a + "&amge=" + b + "&chords=" + arr;
 	
 });

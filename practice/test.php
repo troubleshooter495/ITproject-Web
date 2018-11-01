@@ -359,6 +359,7 @@
 		$('.message').text('Нажмите, чтобы услышать звук');
 		tasks = [];
 		answers = [];
+		usersans = [];
 		for(var i=0; i<amn; i++){
 			var r = Math.floor(Math.random() * notes.length);
 			var a = new Audio();
@@ -409,9 +410,11 @@
 							if(id == answers[index]){
 								outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук.');
 								ansispressed = true;
+								usersans.push(id);
 							} else {
 								outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук');
 								ansispressed = true;
+								usersans.push(id);
 							}
 							currtry = 0;
 							index++;
@@ -427,7 +430,8 @@
 							$('.chordBlock').css('visibility', 'visible');
 						}
 						if(index==tasks.length){
-							outwrite('The end of the programme');
+							outwrite('');
+							end();
 						}
 				});
 				$('.blackbtn').click(function(){
@@ -436,9 +440,11 @@
 							if(id == answers[index]){
 								outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук.');
 								ansispressed = true;
+								usersans.push(id);
 							} else {
 								outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук');
 								ansispressed = true;
+								usersans.push(id);
 							}
 							currtry = 0;
 							index++;
@@ -454,7 +460,8 @@
 							$('.chordBlock').css('visibility', 'visible');
 						}
 						if(index==tasks.length){
-							outwrite('The end of the programme');
+							outwrite('');
+							end();
 						}
 				});
 			
@@ -479,9 +486,11 @@
 						if(id == answers[index]){
 							outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук.');
 							ansispressed = true;
+							usersans.push(id);
 						} else {
 							outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук');
 							ansispressed = true;
+							usersans.push(id);
 						}
 						currtry = 0;
 						index++;
@@ -490,7 +499,8 @@
 						$('.testBlock').css('visibility', 'hidden');
 						$('.chordBlock').css('visibility', 'visible');
 					} else if(index==tasks.length){
-						outwrite('The end of the programme');
+						outwrite('');
+							end();
 					}
 				}
 				if(index >= amn+amint && index < tasks.length){
@@ -499,16 +509,19 @@
 					if(id == answers[index]){
 						outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук.');
 						ansispressed = true;
+						usersans.push(id);
 					} else {
 						outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук');
 						ansispressed = true;
+						usersans.push(id);
 					}
 					currtry = 0;
 					index++;
 					
 				}
 				if(index == tasks.length){
-					outwrite('The end of the programme');
+					outwrite('');
+							end();
 				}
 				}
 			});
@@ -528,27 +541,26 @@
 						currtry++;
 					}
 			});
-//			$('.ans').click(function(){
-//				if(!ansispressed){
-//					var id = $(this).attr('id');
-//					if(id == answers[index]){
-//						outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук.');
-//						ansispressed = true;
-//					} else {
-//						outwrite('Ответ записан. Нажмите, чтобы услышать следующий звук');
-//						ansispressed = true;
-//					}
-//					currtry = 0;
-//					index++;
-//					
-//				}
-//				if(index == tasks.length){
-//					outwrite('The end of the programme');
-//				}
-//			});
 
 		}
-	
+	function end(){
+		line = 'Тестирование завершено!<br> Правильные ответы: ';
+		count = 0;
+		for(var i=0; i < answers.length-1; i++){
+			line += (i+1).toString()+' - '+ normalized(answers[i]) +', ';
+			if(answers[i] == usersans[i]) count++;
+		} line += answers.length +' - ' + normalized(answers[answers.length-1]);
+		
+		if(answers[answers.length-1] == usersans[usersans.length-1]) count++;
+		line += '<br> Ваши ответы: ';
+		
+		for(var i=0; i < usersans.length-1; i++){
+			line += (i+1).toString()+' - '+normalized(usersans[i]) +', ';
+		} line += answers.length +' - ' + normalized(usersans[usersans.length-1]);
+		
+		line += '<br> Вы ответили правильно на '+ count/answers.length*100 +'% вопросов.';
+		$('.message').html(line);
+	}
 	var curfunid = 0;
 	function outwrite(b){
 		curfunid +=1;
@@ -574,7 +586,10 @@
 	else
 		return t;
 	}
-	
+	function normalized(va){
+		goven = {'M35':'Минорное трезвучие(М35)','T35':'Мажорное трезвучие(T35)','BB':'Увеличенное трезвучие','MM':'Уменьшенное трезвучие','B6':'Мажорный секстаккорд(B6)','M6':'Минорный секстаккорд(M6)','M46':'Минорный квартсекстаккорд(M46)','B46':'Мажорный квартсекстаккорд(B46)','D7':'Доминантсептаккорд(D7)','D56':'Квинтсептаккорд(D56)','D34':'Терцквартаккорд(D34)','D2':'Секундаккорд(D2)','m2':'Малая секунда','b2':'Большая секунда','m3':'Малая терция','b3':'Большая терция','c4':'Чистая кварта','c5':'Чистая квинта','m6':'Малая секста','b6':'Большая секста','m7':'Малая септима','b7':'Большая септима','c8':'Октава','do':'До','dod':'До#','re':'Ре','red':'Ре#','mi':'Ми','fa':'Фа','fad':'Фа#','so':'Соль','sod':'Соль#','la':'Ля','lad':'Ля#','si':'Си'}
+		return goven[va];
+	}
 	
 		$('#button1').mouseover(function(){
 			$('#line1').css('width','100%');
