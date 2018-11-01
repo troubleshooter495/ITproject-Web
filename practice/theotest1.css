@@ -72,7 +72,7 @@ a{
 	background-position: center;
 }
  .message {
-	height: 150px;
+	height: 200px;
 	width: 400px;
 	margin: auto;
 	margin-top: 30px;
@@ -100,4 +100,27 @@ a{
 
 #f4 {
 	border: none;
+}
+
+img {
+	display: block;
+	text-align: center;
+	margin: auto;
+}
+
+.continue {
+	margin: auto;
+	text-align: center;
+	width: 200px;
+	font-size: 2em;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.continue:hover {
+	text-shadow: 1px 1px 0 white, 2px 2px 0 white, 3px 3px 0 white;
+}
+
+.continue:active {
+	text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white,1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
 }

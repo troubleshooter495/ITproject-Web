@@ -187,7 +187,9 @@
 			<div class="overlay" id="overlay4">
 				<div class="classic">
 					<p class="tit2" align="center">Пройти тест.</p>
-						 
+					<a href="theotest1.html"><div class="theoryTest">Тест 1</div></a>
+					<a href="theotest2.html"><div class="theoryTest">Тест 2</div></a>
+					<a href="theotest3.html"><div class="theoryTest" style="border: none;">Тест 3</div></a>
 				</div>
 				<div class="user">
 					<p class="tit2" align="center">Создать тест.</p>
