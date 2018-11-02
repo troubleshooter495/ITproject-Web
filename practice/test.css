@@ -224,3 +224,21 @@ body {
 	margin: auto;
 	visibility: hidden;
 }
+
+
+.confirmButton:hover {
+	background:#E6DAD3;
+}
+
+.replayButton1:hover, .replayButton2:hover, .replayButton3:hover {
+	background:#E6DAD3;
+}
+
+.replayButton1:active, .replayButton2:active, .replayButton3:active {
+	box-shadow: 2px 2px  0 0 black;
+}
+
+.confirmButton:active {
+	box-shadow: 2px 2px  0 0 black;
+	border: 1px solid black;
+}

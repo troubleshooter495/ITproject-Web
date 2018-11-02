@@ -138,3 +138,20 @@ body {
 	width: 100%;
 	font-size: 20px;
 }
+.confirmButton:hover {
+	background:#E6DAD3;
+}
+
+.replayButton:hover {
+	background:#E6DAD3;
+}
+
+.replayButton:active {
+	box-shadow: 2px 2px  0 0 black;
+}
+
+.confirmButton:active {
+	box-shadow: 2px 2px  0 0 black;
+	border: 1px solid black;
+}
+
