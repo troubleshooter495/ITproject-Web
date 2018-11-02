@@ -25,70 +25,9 @@
 	<div class="continue">Продолжить</div>
 </div>
 </body>
+	
+	<script src="theotest1.js"></script>
 	<script>
-		task=["<img src='img/1.jpg'>","<img src='img/2.jpg'>","<img src='img/3.jpg'>","<img src='img/4.jpg'>","<img src='img/5.jpg'>","Что делает знак диез (#)?","Что делает знак дубль-бемоль(♭♭)?","Какое расстояние от ноты <i>до</i> до <i>ре</i>?","Какая нота находится на расстоянии 3 тона и полутон от ноты <i>ми</i> вверх?","Какая нота находится на расстоянии 2 тона и полутон от ноты <i>фа#</i> вниз?"]
-		f1 =[['Ля',false],['До',true],['До',false],['Фа',false],['Ми',false],['Повышает на тон',false],['Повышает на тон',false],["Тон",true],["Ля",false],['Ми',false]];
-		f2 = [['Соль',true],["Ре",false],['Ля',false],['Ми',false],['Ре',true],['Повышает на полутон',true],['Повышает на полутон',false],["Полутон",false],["Ля#",false],['До',false]];
-		f3 = [['Фа',false],["Си",false],['Соль',false],['Соль',false],['Ля',false],['Понижает на тон',false],['Понижает на тон',true],["Два тона",false],["Си",true],['Ре',false]];
-		f4 = [['Ля#',false],["Ми",false],['Си',true],['Ля',true],['До',false],['Понижает на полутон',false],['Понижает на полутон',false],["Тон и полутон",false],["До",false],['До#',true]];
-		fields = [f1,f2,f3,f4]
-		index = 0;
-		rewrite();
-		correctans = 0;
-		notpressed = true;
-		$('.field').click(function(){
-			if(notpressed){
-				id = $(this).attr('id');
-				var t = massive(id)
-				if(t[index][1]==false){
-					$(this).css('color','red');
-				} else correctans++;
-				for(var i = 0; i < 4; i++){
-					var arr =fields[i];
-					if(arr[index][1]){
-						$(getString(arr)).css('color','green');
-					}
-				}
-				$('.continue').css('visibility','visible');
-				notpressed = false;
-			}
-		});
-		
-		$('.continue').click(function(){
-			if(index < 9){
-				index++;
-				rewrite();
-				$('.continue').css('visibility','hidden');
-				notpressed = true;
-			} else if(index == 9) {
-				$('.message').html('Тестирование завершено! Вы набрали ' + correctans + ' правильных ответов из 10.');
-				index++;
-			} else {
-				location.href = '/practice';
-			}
-		});
-		
-		function rewrite(){
-			for(var i = 1; i < 5; i++){
-				var t = fields[i-1];
-				$('#f'+i).text(t[index][0]);
-				$('#f'+i).css('color','black');
-			}
-			$('.message').html(task[index]);
-		}
-		function massive(i){
-			if(i=='f1') return f1;
-			if(i=='f2') return f2;
-			if(i=='f3') return f3;
-			if(i=='f4') return f4;
-			throw Error;
-		}
-		function getString(arr){
-			if(arr==f1) return '#f1';
-			if(arr==f2) return '#f2';
-			if(arr==f3) return '#f3';
-			if(arr==f4) return '#f4';
-		}
 		$('#button1').mouseover(function(){
 			$('#line1').css('width','100%');
 		});
