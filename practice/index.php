@@ -138,7 +138,7 @@
 					<p class="tit2" align="center">Пользовательский режим.</p>
 					<ul>
 						<li>Количество попыток</li>
-						<li>Количесвто интервалов</li>
+						<li>Количесвто аккордов</li>
 						
 						<li>Тонические трезвучия</li>
 						<li>Увел., уменьш. трезвучия</li>
@@ -284,13 +284,10 @@ $('#int').click(function(){
 $('#chord').click(function(){
 	var a = $('#amtr2  option:selected').text();
 	var b = $('#amge2  option:selected').text();
-	var arr = new Array();
+	var arr = [];
 	$('input[name="type3"]:checked').each(function() {
 		arr.push(this.value);
 	});
-	if(arr!=[]){
-		arr = '1';
-	}
 	window.location = "pChord.php?type=chord&amtr=" + a + "&amge=" + b + "&chords=" + arr;
 	
 });

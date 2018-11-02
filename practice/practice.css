@@ -260,3 +260,11 @@ div {
 	text-align: left;
 	
 }
+
+.startButton:hover {
+	background:#F2ECE9;
+}
+
+.startButton:active {
+	box-shadow: 2px 2px  0 0 black;
+}
