@@ -199,3 +199,23 @@ p{
 	color: inherit;
 	text-decoration: inherit;
 }
+.contactInfo {
+	position: relative;
+	text-align: center;
+	top:50px;
+	width: 500px;
+	margin: auto;
+}
+
+.infoLine {
+	margin-top: 5px;
+	font-family: "raleway";
+}
+
+img {
+	margin: auto;
+	display:block;
+	position: relative;
+	top: 50px;
+	
+}

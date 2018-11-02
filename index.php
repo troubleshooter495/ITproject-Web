@@ -3,8 +3,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>IVR</title>
+<title>Сольфеджио</title>
 <link rel="stylesheet" href="index.css">
+	
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 
@@ -16,7 +17,6 @@
 					<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
 					<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
 					<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-					<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
 					<a class="logo" href="/"></a>
 				</div>
 				<div class="headerInfo">
@@ -47,7 +47,14 @@
 					<a class="btn" href="/pmaster"><span>Начать</span></a>
 				</div>
 			</div>
-			<div class="footerBlock"></div>
+			<div class="footerBlock">
+				<img src="img/kittya.png" alt="">
+				<div class="contactInfo">
+					<p class="infoLine">Сайт разработал Воронин Андрей</p>
+					<p class="infoLine">Лицей НИУ ВШЭ, 2018</p>
+					<p class="infoLine">Telegram для отзывов и предложений: @SkankHunter322</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="backgroundBlock">
@@ -62,9 +69,6 @@
 		$('#button1').mouseout(function(){
 			$('#line1').css('width','0%');
 		});
-		/*$('#button1').on("click",function(){
-			window.location.href = "/practice.php";
-		});*/
 		$('#button2').mouseover(function(){
 			$('#line2').css('width','100%');
 		});

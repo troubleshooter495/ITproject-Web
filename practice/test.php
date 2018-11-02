@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Практика</title>
+<title>Тестирование</title>
 <link rel="stylesheet" href="test.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
@@ -12,7 +12,6 @@
 		<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
 		<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
 		<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-		<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
 		<a class="logo" href="/"></a>
 	</div>
 	<div class="message"></div>
@@ -382,7 +381,8 @@
 			var r = Math.floor(Math.random() * 24)+1;
 			var type = types_of_chords[Math.floor(Math.random() * types_of_chords.length)];
 			tasks.push([type,r]);
-			answers.push(type);
+			var name = type.toString().match(/class ([^(]*)\{/)[1].replace(/\s/g, '')
+			answers.push(name);
 		}
 		index = 0;
 		currtry = 0;
@@ -558,7 +558,7 @@
 			line += (i+1).toString()+' - '+normalized(usersans[i]) +', ';
 		} line += answers.length +' - ' + normalized(usersans[usersans.length-1]);
 		
-		line += '<br> Вы ответили правильно на '+ count/answers.length*100 +'% вопросов.';
+		line += '<br> Вы ответили правильно на '+ (count/answers.length*100).toFixed(0) +'% вопросов.';
 		$('.message').html(line);
 	}
 	var curfunid = 0;

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" >
-	<title>Practice</title>
+	<title>Практика</title>
 	<link rel="stylesheet" href="pTest.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
@@ -12,7 +12,6 @@
 		<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
 		<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
 		<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-		<div class="button" id="button4"><div class="headerButton">Информация<div class="borderButton"><div class="borderLine" id="line4"></div></div></div></div>
 		<a class="logo" href="/"></a>
 	</div>
 	<div class="message">
