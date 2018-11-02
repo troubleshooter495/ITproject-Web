@@ -1,44 +1,64 @@
 <!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8" >
-	<title>Практика</title>
-	<link rel="stylesheet" href="pChord.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <meta charset="utf-8">
+    <title>Практика</title>
+    <link rel="stylesheet" href="pChord.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
+
 <body>
-	<?php
+    <?php
 		$type = $_GET['type'];
 		$amge = $_GET['amge'];
 		$amtr = $_GET['amtr'];
 		$chords = $_GET['chords'];
 		
 	?>
-<div class="midBlock">
-	<div class="header">
-		<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
-		<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
-		<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-		<a class="logo" href="/"></a>
-	</div>
-	<div class="message">
-		e
-	</div>
-	<div class="testBlock">
-		<div class="test">
-			<?php
+    <div class="midBlock">
+        <div class="header">
+            <div class="button" id="button1">
+                <div class="headerButton"><a href="/theory">Теория</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="button" id="button2">
+                <div class="headerButton"><a href="/practice">Практика</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="button" id="button3">
+                <div class="headerButton"><a href="/pmaster">Онлайн-пианино</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line3"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="logo" href="/"></a>
+        </div>
+        <div class="message">
+            e
+        </div>
+        <div class="testBlock">
+            <div class="test">
+                <?php
 				if(strpos($chords,'1')!==false || $type=='chordclassic' || !$chords){
 					echo("<div class='ans' id='T35'>♪ Мажорное трезвучие</div>
 			<div class='ans' id='M35'>♪ Минорное трезвучие</div>");
 				}
 			?>
-			<?php
+                <?php
 				if(strpos($chords,'2')!==false || $type=='chordclassic'){
 					echo("
 			<div class='ans' id='BB'>♪ Увеличенное трезвучие</div>
 			<div class='ans' id='MM'>♪ Уменьшенное трезвучие</div>");}
 					?>
-			<?php
+                <?php
 				if(strpos($chords,'3')!==false || $type=='chordclassic'){
 					echo("	
 			<div class='ans' id='B6'>♪ Мажорный секстаккорд</div>
@@ -46,7 +66,7 @@
 			<div class='ans' id='M6'>♪ Минорный секстаккорд</div>
 			<div class='ans' id='M46'>♪ Минорный квартсекстаккорд</div>");}
 					?>
-			<?php
+                <?php
 				if(strpos($chords,'4')!==false || $type=='chordclassic'){
 					echo("	
 			<div class='ans' id='D7'>♪ Доминантсептаккорд</div>
@@ -54,15 +74,17 @@
 			<div class='ans' id='D34'>♪ Терцквартаккорд</div>
 			<div class='ans' style='border:none;' id='D2'>♪ Секундаккорд</div>");}
 					?>
-		</div>
-		<div class="replayButton"><p id="opa">проиграть</p></div>
-	</div>
-	<div class="confirmButton">выйти</div>
-</div>
-<script>
-	outwrite('Нажмите на кнопку, чтобы услышать звук');
-$('.message').text('Нажмите на кнопку, чтобы услышать звук');
-<?php
+            </div>
+            <div class="replayButton">
+                <p id="opa">проиграть</p>
+            </div>
+        </div>
+        <div class="confirmButton">выйти</div>
+    </div>
+    <script>
+        outwrite('Нажмите на кнопку, чтобы услышать звук');
+        $('.message').text('Нажмите на кнопку, чтобы услышать звук');
+        <?php
 	$type = $_GET['type'];
 	$amge = $_GET['amge'];
 	$amtr = $_GET['amtr'];
@@ -714,58 +736,73 @@ ways = {1:'do1.mp3',13:'do2.mp3', 2:'dod1.mp3', 14:'dod2.mp3', 6:'fa1.mp3', 18:'
 	}
 ?>
 
-	function normalized(nota){
-		goven = {'M35':'Минорное трезвучие(М35)','T35':'Мажорное трезвучие(T35)','BB':'Увеличенное трезвучие','MM':'Уменьшенное трезвучие','B6':'Мажорный секстаккорд(B6)','M6':'Минорный секстаккорд(M6)','M46':'Минорный квартсекстаккорд(M46)','B46':'Мажорный квартсекстаккорд(B46)','D7':'Доминантсептаккорд(D7)','D56':'Квинтсептаккорд(D56)','D34':'Терцквартаккорд(D34)','D2':'Секундаккорд(D2)'}
-		return goven[nota];
-	}
-	
-		var curfunid = 0;
-function outwrite(b){
-	curfunid +=1;
-	var tt = curfunid;
-	var temp = '';
-	var len = b.length;
-	$('.message').text('');
-	var j=0;
-	setInterval(function(){
-	if(j < len &&  curfunid==tt){
-		temp += b[j];
-		$('.message').text(temp);
-		j+=1; 
-	}  else if (curfunid!=tt){
-		return;
-	}
-	},20);
-	
-}
-	
-		$('#button1').mouseover(function(){
-			$('#line1').css('width','100%');
-		});
-		$('#button1').mouseout(function(){
-			$('#line1').css('width','0%');
-		});
-		$('#button2').mouseover(function(){
-			$('#line2').css('width','100%');
-		});
-		$('#button2').mouseout(function(){
-			$('#line2').css('width','0%');
-		});
-		$('#button3').mouseover(function(){
-			$('#line3').css('width','100%');
-		});
-		$('#button3').mouseout(function(){
-			$('#line3').css('width','0%');
-		});
-		$('#button4').mouseover(function(){
-			$('#line4').css('width','100%');
-		});
-		$('#button4').mouseout(function(){
-			$('#line4').css('width','0%');
-		});		
-$('.confirmButton').click(function(){
-	location.href = '/practice';
-});
-</script>
+        function normalized(nota) {
+            goven = {
+                'M35': 'Минорное трезвучие(М35)',
+                'T35': 'Мажорное трезвучие(T35)',
+                'BB': 'Увеличенное трезвучие',
+                'MM': 'Уменьшенное трезвучие',
+                'B6': 'Мажорный секстаккорд(B6)',
+                'M6': 'Минорный секстаккорд(M6)',
+                'M46': 'Минорный квартсекстаккорд(M46)',
+                'B46': 'Мажорный квартсекстаккорд(B46)',
+                'D7': 'Доминантсептаккорд(D7)',
+                'D56': 'Квинтсептаккорд(D56)',
+                'D34': 'Терцквартаккорд(D34)',
+                'D2': 'Секундаккорд(D2)'
+            }
+            return goven[nota];
+        }
+
+        var curfunid = 0;
+
+        function outwrite(b) {
+            curfunid += 1;
+            var tt = curfunid;
+            var temp = '';
+            var len = b.length;
+            $('.message').text('');
+            var j = 0;
+            setInterval(function() {
+                if (j < len && curfunid == tt) {
+                    temp += b[j];
+                    $('.message').text(temp);
+                    j += 1;
+                } else if (curfunid != tt) {
+                    return;
+                }
+            }, 20);
+
+        }
+
+        $('#button1').mouseover(function() {
+            $('#line1').css('width', '100%');
+        });
+        $('#button1').mouseout(function() {
+            $('#line1').css('width', '0%');
+        });
+        $('#button2').mouseover(function() {
+            $('#line2').css('width', '100%');
+        });
+        $('#button2').mouseout(function() {
+            $('#line2').css('width', '0%');
+        });
+        $('#button3').mouseover(function() {
+            $('#line3').css('width', '100%');
+        });
+        $('#button3').mouseout(function() {
+            $('#line3').css('width', '0%');
+        });
+        $('#button4').mouseover(function() {
+            $('#line4').css('width', '100%');
+        });
+        $('#button4').mouseout(function() {
+            $('#line4').css('width', '0%');
+        });
+        $('.confirmButton').click(function() {
+            location.href = '/practice';
+        });
+    </script>
 </body>
+
 </html>

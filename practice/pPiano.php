@@ -1,77 +1,95 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8" >
-	<title>Практика</title>
-	<link rel="stylesheet" href="pPiano.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <meta charset="utf-8">
+    <title>Практика</title>
+    <link rel="stylesheet" href="pPiano.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
+
 <body>
-<div class="midBlock">
-	<div class="header">
-		<div class="button" id="button1"><div class="headerButton"><a href="/theory">Теория</a><div class="borderButton"><div class="borderLine" id="line1"></div></div></div></div>
-		<div class="button" id="button2"><div class="headerButton"><a href="/practice">Практика</a><div class="borderButton"><div class="borderLine" id="line2"></div></div></div></div>
-		<div class="button" id="button3"><div class="headerButton"><a href="/pmaster">Онлайн-пианино</a><div class="borderButton"><div class="borderLine" id="line3"></div></div></div></div>
-		<a class="logo" href="/"></a>
-	</div>
-	<div class="message">
-	
+    <div class="midBlock">
+        <div class="header">
+            <div class="button" id="button1">
+                <div class="headerButton"><a href="/theory">Теория</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="button" id="button2">
+                <div class="headerButton"><a href="/practice">Практика</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="button" id="button3">
+                <div class="headerButton"><a href="/pmaster">Онлайн-пианино</a>
+                    <div class="borderButton">
+                        <div class="borderLine" id="line3"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="logo" href="/"></a>
+        </div>
+        <div class="message">
 
 
-	</div>
-	<div class="pianoBlock">
-		<div class="piano">
-			<div class="whitebtn" id="do"> </div>
-			<div class="whitebtn" id="re"> </div>
-			<div class="whitebtn" id="mi"> </div>
-			<div class="whitebtn" id="fa"> </div>
-			<div class="whitebtn" id="so"> </div>
-			<div class="whitebtn" id="la"> </div>
-			<div class="whitebtn" id="si"> </div>
-			<div class="blackbtn" id="dod"></div>
-			<div class="blackbtn" id="red"></div>
-			<div class="blackbtn" id="fad"></div>
-			<div class="blackbtn" id="sod"></div>
-			<div class="blackbtn" id="lad"></div>
-		</div>
-		<div class="replayButton">
-			<p id="opa">проиграть</p>
-		</div>
-	</div>
-	<div class="confirmButton">выйти</div>
-</div>
+
+        </div>
+        <div class="pianoBlock">
+            <div class="piano">
+                <div class="whitebtn" id="do"> </div>
+                <div class="whitebtn" id="re"> </div>
+                <div class="whitebtn" id="mi"> </div>
+                <div class="whitebtn" id="fa"> </div>
+                <div class="whitebtn" id="so"> </div>
+                <div class="whitebtn" id="la"> </div>
+                <div class="whitebtn" id="si"> </div>
+                <div class="blackbtn" id="dod"></div>
+                <div class="blackbtn" id="red"></div>
+                <div class="blackbtn" id="fad"></div>
+                <div class="blackbtn" id="sod"></div>
+                <div class="blackbtn" id="lad"></div>
+            </div>
+            <div class="replayButton">
+                <p id="opa">проиграть</p>
+            </div>
+        </div>
+        <div class="confirmButton">выйти</div>
+    </div>
 
 
-<script>
+    <script>
+        $('.whitebtn').on('click touchstart', function(e) {
+            $('#' + e.target.id).css('box-shadow', 'inset 0 0 10px rgba(0,0,0,0.9)');
+            setTimeout(function() {
+                $('#' + e.target.id).css('box-shadow', 'none');
+            }, 200);
+        });
+        $('.blackbtn').on('click touchstart', function(e) {
+            $('#' + e.target.id).css('box-shadow', 'inset 0 0 3px rgba(255,255,255,0.9)');
+            $('#' + e.target.id).css('height', '109px');
+            setTimeout(function() {
+                $('#' + e.target.id).css('box-shadow', 'none');
+                $('#' + e.target.id).css('height', '110px');
+            }, 200);
+        });
 
-	
-$('.whitebtn').on('click touchstart', function(e){
-	$('#'+e.target.id).css('box-shadow','inset 0 0 10px rgba(0,0,0,0.9)');
-	setTimeout(function(){
-		$('#'+e.target.id).css('box-shadow','none');
-	},200);
-});
-$('.blackbtn').on('click touchstart', function(e){
-	$('#'+e.target.id).css('box-shadow','inset 0 0 3px rgba(255,255,255,0.9)');
-	$('#'+e.target.id).css('height','109px');
-	setTimeout(function(){
-		$('#'+e.target.id).css('box-shadow','none');
-		$('#'+e.target.id).css('height','110px');
-	},200);
-});
-	
-	
-function pausecomp(millis)
-{
-    var date = new Date();
-    var curDate = null;
-    do { curDate = new Date(); }
-    while(curDate-date < millis);
-}
-outwrite('Нажмите на кнопку, чтобы услышать звук');
-$('.message').text('Нажмите на кнопку, чтобы услышать звук');
-<?php
+
+        function pausecomp(millis) {
+            var date = new Date();
+            var curDate = null;
+            do {
+                curDate = new Date();
+            }
+            while (curDate - date < millis);
+        }
+        outwrite('Нажмите на кнопку, чтобы услышать звук');
+        $('.message').text('Нажмите на кнопку, чтобы услышать звук');
+        <?php
 	$type = $_GET['type'];
 	$amge = $_GET['amge'];
 	$amtr = $_GET['amtr'];
@@ -207,61 +225,76 @@ $('.blackbtn').click(function(){
 }
 
 ?>
-	//['do1.mp3', 'do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3', 'lad1.mp3', 'mi1.mp3', 're1.mp3', 'red1.mp3', 'si1.mp3', 'so1.mp3', 'sod1.mp3']
-function normalized(nota){
-	var kkk = {'do':'До','dod':'До#','re':'Ре','red':'Ре#','mi':'Ми','fa':'Фа','fad':'Фа#','so':'Соль','sod':'Соль#','la':'Ля','lad':'Ля#','si':'Си'};
-	return kkk[nota];
-}
-	
-	
-	
-var curfunid = 0;
-function outwrite(b){
-	curfunid +=1;
-	var tt = curfunid;
-	var temp = '';
-	var len = b.length;
-	$('.message').text('');
-	var j=0;
-	setInterval(function(){
-	if(j < len &&  curfunid==tt){
-		temp += b[j];
-		$('.message').text(temp);
-		j+=1; 
-	}  else if (curfunid!=tt){
-		return;
-	}
-	},20);
-	
-}
+        //['do1.mp3', 'do1.mp3', 'dod1.mp3', 'fa1.mp3', 'fad1.mp3', 'la1.mp3', 'lad1.mp3', 'mi1.mp3', 're1.mp3', 'red1.mp3', 'si1.mp3', 'so1.mp3', 'sod1.mp3']
+        function normalized(nota) {
+            var kkk = {
+                'do': 'До',
+                'dod': 'До#',
+                're': 'Ре',
+                'red': 'Ре#',
+                'mi': 'Ми',
+                'fa': 'Фа',
+                'fad': 'Фа#',
+                'so': 'Соль',
+                'sod': 'Соль#',
+                'la': 'Ля',
+                'lad': 'Ля#',
+                'si': 'Си'
+            };
+            return kkk[nota];
+        }
 
-	$('#button1').mouseover(function(){
-			$('#line1').css('width','100%');
-		});
-		$('#button1').mouseout(function(){
-			$('#line1').css('width','0%');
-		});
-		$('#button2').mouseover(function(){
-			$('#line2').css('width','100%');
-		});
-		$('#button2').mouseout(function(){
-			$('#line2').css('width','0%');
-		});
-		$('#button3').mouseover(function(){
-			$('#line3').css('width','100%');
-		});
-		$('#button3').mouseout(function(){
-			$('#line3').css('width','0%');
-		});
-		$('#button4').mouseover(function(){
-			$('#line4').css('width','100%');
-		});
-		$('#button4').mouseout(function(){
-			$('#line4').css('width','0%');
-		});	
-	$('.confirmButton').click(function(){
-		location.href = '/practice';
-	});
-</script>
+
+
+        var curfunid = 0;
+
+        function outwrite(b) {
+            curfunid += 1;
+            var tt = curfunid;
+            var temp = '';
+            var len = b.length;
+            $('.message').text('');
+            var j = 0;
+            setInterval(function() {
+                if (j < len && curfunid == tt) {
+                    temp += b[j];
+                    $('.message').text(temp);
+                    j += 1;
+                } else if (curfunid != tt) {
+                    return;
+                }
+            }, 20);
+
+        }
+
+        $('#button1').mouseover(function() {
+            $('#line1').css('width', '100%');
+        });
+        $('#button1').mouseout(function() {
+            $('#line1').css('width', '0%');
+        });
+        $('#button2').mouseover(function() {
+            $('#line2').css('width', '100%');
+        });
+        $('#button2').mouseout(function() {
+            $('#line2').css('width', '0%');
+        });
+        $('#button3').mouseover(function() {
+            $('#line3').css('width', '100%');
+        });
+        $('#button3').mouseout(function() {
+            $('#line3').css('width', '0%');
+        });
+        $('#button4').mouseover(function() {
+            $('#line4').css('width', '100%');
+        });
+        $('#button4').mouseout(function() {
+            $('#line4').css('width', '0%');
+        });
+        $('.confirmButton').click(function() {
+            location.href = '/practice';
+        });
+    </script>
 </body>
+
 </html>
